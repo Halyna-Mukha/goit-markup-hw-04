@@ -53,6 +53,7 @@ body {
 
 .main-header {
   border-bottom: 1px solid #e7e9fc;
+  box-shadow: 0px 2px 1px rgba(46, 47, 66, 0.08), 0px 1px 1px rgba(46, 47, 66, 0.16), 0px 1px 6px rgba(46, 47, 66, 0.08); 
 }
 .nav-container {
   display: flex;
@@ -87,7 +88,6 @@ body {
   display: flex;
   gap: 40px;
   padding: 24px 0;
- 
 }
 .link {
   font-weight: 500;
@@ -103,18 +103,17 @@ body {
 }
 .current {
   position: relative;
-  color: var(--OCEAN, #404BBF);
-  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1)
+  color: var(--OCEAN, #404bbf);
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
-
 
 .current::after {
   display: block;
   width: 100%;
   height: 4px;
   border-radius: 2px;
-  background: var(--OCEAN, #404BBF);
-  content: '';
+  background: var(--OCEAN, #404bbf);
+  content: "";
   position: absolute;
   left: 0;
   bottom: -1px;
@@ -135,6 +134,7 @@ body {
   line-height: 1.5;
   letter-spacing: 0.02em;
   color: #434455;
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .contacts:hover,
 .contacts:focus {
@@ -146,6 +146,7 @@ body {
 /* =========== Hero ============ */
 
 .hero {
+  width: 1440px;
   padding: 188px 0;
   background-color: var(--NAVY-BLUE, #2e2f42);
   flex-shrink: 0;
@@ -191,6 +192,7 @@ body {
   align-items: center;
   margin-left: auto;
   margin-right: auto;
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1); 
 }
 .button-klik:hover,
 .button-klik:focus {
@@ -264,7 +266,6 @@ body {
   background-color: var(--CLOUD, #f4f4fd);
   flex-shrink: 0;
   padding: 120px 0;
-  
 }
 .menu-team {
   display: flex;
@@ -286,7 +287,9 @@ body {
   background-color: #ffffff;
   width: calc((100% - 72px) / 4);
   border-radius: 0px 0px 4px 4px;
-  box-shadow: 0px 2px 1px 0px rgba(46, 47, 66, 0.08), 0px 1px 1px 0px rgba(46, 47, 66, 0.16), 0px 1px 6px 0px rgba(46, 47, 66, 0.08);
+  box-shadow: 0px 2px 1px 0px rgba(46, 47, 66, 0.08),
+    0px 1px 1px 0px rgba(46, 47, 66, 0.16),
+    0px 1px 6px 0px rgba(46, 47, 66, 0.08);
 }
 .team-title-item-name {
   padding: 32px 0;
@@ -327,7 +330,8 @@ body {
   justify-content: center;
 }
 
-.team-list-icon-link:hover {
+.team-list-icon-link:hover,
+.team-list-icon-link:focus {
   background-color: #404bbf;
 }
 .box-team {
@@ -360,6 +364,11 @@ body {
 .card {
   width: calc((100% - 48px) / 3);
   background-color: var(--WHITE, #fff);
+  transition: box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+.card:hover {
+  box-shadow: 0px 1px 6px rgba(46, 47, 66, 0.08),
+    0px 1px 1px rgba(46, 47, 66, 0.16), 0px 2px 1px rgba(46, 47, 66, 0.08);
 }
 .card-overlay {
   position: relative;
@@ -375,7 +384,9 @@ body {
   transition: box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .portfolio-title-list:hover {
-  box-shadow: 0px 2px 1px 0px rgba(46, 47, 66, 0.08), 0px 1px 1px 0px rgba(46, 47, 66, 0.16), 0px 1px 6px 0px rgba(46, 47, 66, 0.08);
+  box-shadow: 0px 2px 1px 0px rgba(46, 47, 66, 0.08),
+    0px 1px 1px 0px rgba(46, 47, 66, 0.16),
+    0px 1px 6px 0px rgba(46, 47, 66, 0.08);
 }
 .item {
   height: 300px;
@@ -425,8 +436,11 @@ body {
   overflow: auto;
   transform: translateY(100%);
   transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
-  }
+}
 
+.overlay:hover {
+  transition: box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
 .card-overlay:hover .overlay {
   transform: translateY(0%);
 }
@@ -441,6 +455,7 @@ body {
 
 .link-logo-footer {
   display: flex;
+  align-items: baseline;
 }
 .logo-footer {
   display: inline-block;
@@ -473,26 +488,29 @@ body {
   margin-bottom: 16px;
 }
 .icon-footer-link {
-  display: block;
+  
   line-height: 0;
   fill: #f4f4fd;
+  width: 100%;
+  height: 100%;
+  background-color: #4d5ae5;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 .icon-footer-box {
   display: flex;
-  column-gap: 16px;
+  gap: 16px;
 }
 .icon-footer-list {
   width: 40px;
   height: 40px;
   display: flex;
-  align-items: center;
-  justify-content: center;
-  border-radius: 50%;
-  background-color: #4d5ae5;
   transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
-.icon-footer-list:hover,
-.icon-footer-list:hover {
+.icon-footer-link:hover,
+.icon-footer-link:focus {
   background-color: #31d0aa;
 }
 /* =========== /Footer ============== */
